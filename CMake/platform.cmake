@@ -12,6 +12,7 @@ include_directories(${CMAKE_SOURCE_DIR}/Platform/Generated_files/Drivers/CMSIS/D
 include_directories(${CMAKE_SOURCE_DIR}/Platform/Generated_files/Drivers/CMSIS/Include)
 
 include_directories(${CMAKE_SOURCE_DIR}/Platform/Drivers/LEDs)
+include_directories(${CMAKE_SOURCE_DIR}/Platform/Drivers/Buttons)
 
 list(APPEND PROJECT_CUBEMX_SOURCES
 
@@ -78,6 +79,7 @@ set (LINKER_SCRIPT
 list(APPEND PROJECT_PLATFORM_DRIVERS
 
     ${CMAKE_SOURCE_DIR}/Platform/Drivers/LEDs/LEDs.cpp
+    ${CMAKE_SOURCE_DIR}/Platform/Drivers/Buttons/Buttons.cpp
 )
 set_source_files_properties(PROJECT_PLATFORM_DRIVERS LANGUAGE CXX)
 

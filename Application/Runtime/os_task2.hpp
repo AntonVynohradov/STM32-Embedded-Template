@@ -1,11 +1,13 @@
 #pragma once
 
 #include "cmsis_os.h"
-
+#include "LEDs.hpp"
+#include "Buttons.hpp"
 class OS_TASK2
 {
 public:
     static auto run(void* argument) -> void;
+    static auto button_callback(uint16_t, void*) -> void;
 
     static OS_TASK2& getInstance()
     {
@@ -24,6 +26,8 @@ private:
             .stack_size = 128 * 4,
             .priority = (osPriority_t)osPriorityNormal,
     };
+
+    LEDs m_leds;    
 };
 
 static OS_TASK2& os_task2 = OS_TASK2::getInstance();

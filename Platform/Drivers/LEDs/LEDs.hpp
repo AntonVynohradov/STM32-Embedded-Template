@@ -13,7 +13,7 @@ class LEDs
     };
 
     LEDs() = default;
-    ~LEDs() = default;
+    virtual ~LEDs() = default;
 
     auto On(Color) -> void;
     auto Off(Color) -> void;

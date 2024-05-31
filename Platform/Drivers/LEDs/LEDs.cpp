@@ -1,8 +1,6 @@
 #include "LEDs.hpp"
 #include "LEDs_Cfg.hpp"
 
-#include "main.h"
-
 auto LEDs::On(LEDs::Color led) -> void
 {
     HAL_GPIO_WritePin(LEDs_Cfg::Port, LEDs_Cfg::Pins.at(led), GPIO_PIN_SET);

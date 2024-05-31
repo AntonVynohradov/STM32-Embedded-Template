@@ -3,15 +3,16 @@
 
 OS_TASK1::OS_TASK1()
 {
-    m_TaskHandle = osThreadNew(this->run, NULL, &m_attributes);
+    m_TaskHandle = osThreadNew(this->run, this, &m_attributes);
 }
 
 auto OS_TASK1::run(void* argument) -> void
 {
-    LEDs ledRed;
+    OS_TASK1 *task = static_cast<OS_TASK1 *>(argument);
+
     while (true)
     {
-        ledRed.Toggle(LEDs::LED_RED);
+        task->m_leds.Toggle(LEDs::LED_RED);        
         osDelay(500);
     }
 }
