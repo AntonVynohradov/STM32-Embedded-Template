@@ -15,10 +15,6 @@ set (PROJECT_DEFINES
     "USE_HAL_DRIVER"
     )
 
-set (LINKER_SCRIPT
-    ${CMAKE_SOURCE_DIR}/Platform/STM32F407VGTx_FLASH.ld
-  )
-
 ############ MODIFY ACCORDING TO REQUIREMENTS) ########################
 
 #######################################################################
