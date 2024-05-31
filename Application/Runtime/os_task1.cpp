@@ -1,5 +1,5 @@
 #include "os_task1.hpp"
-#include "main.h"
+#include "LEDs.hpp"
 
 OS_TASK1::OS_TASK1()
 {
@@ -7,10 +7,11 @@ OS_TASK1::OS_TASK1()
 }
 
 auto OS_TASK1::run(void* argument) -> void
-{   
+{
+    LEDs ledRed;
     while (true)
-    {    
-        HAL_GPIO_TogglePin(GPIOD, LD4_Pin);
-        osDelay(100);
+    {
+        ledRed.Toggle(LEDs::LED_RED);
+        osDelay(500);
     }
 }
